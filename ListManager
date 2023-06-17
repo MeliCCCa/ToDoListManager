@@ -1,0 +1,28 @@
+// ToDoListManager - Simple JavaScript program for managing a to-do list
+
+const todoList = [];
+
+function addTodoItem(item) {
+  todoList.push(item);
+}
+
+function removeTodoItem(item) {
+  const index = todoList.indexOf(item);
+  if (index !== -1) {
+    todoList.splice(index, 1);
+  }
+}
+
+function displayTodoList() {
+  console.log("Todo List:");
+  todoList.forEach((item, index) => {
+    console.log(`${index + 1}. ${item}`);
+  });
+}
+
+// Example usage
+addTodoItem("Buy groceries");
+addTodoItem("Finish homework");
+displayTodoList();
+removeTodoItem("Buy groceries");
+displayTodoList();
